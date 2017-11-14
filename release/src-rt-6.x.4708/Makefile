@@ -146,8 +146,8 @@ ifneq ($(ASUS_TRX),0)
 	$(MAKE) -C ctools
 	ctools/objcopy -O binary -R .note -R .note.gnu.build-id -R .comment -S $(LINUXDIR)/vmlinux ctools/piggy
 	ctools/lzma_4k e ctools/piggy  ctools/vmlinuz-lzma
-	ctools/mksquashfs router/arm-uclibc/target ctools/target.squashfs -noappend -all-root
-	ctools/trx -o image/linux-lzma.trx ctools/vmlinuz-lzma ctools/target.squashfs
+##	ctools/mksquashfs router/arm-uclibc/target ctools/target.squashfs -noappend -all-root
+##	ctools/trx -o image/linux-lzma.trx ctools/vmlinuz-lzma ctools/target.squashfs
 # for asus RT-N18U, RT-AC56U, RT-AC68U, RT-AC68R, RT-AC68P
 ifeq ($(ASUS_TRX),ASUS)
 ifeq ($(CONFIG_BCM7),y)
@@ -175,9 +175,9 @@ else
 ifeq ($(NVRAM_128K),y)
 	ctools/trx_asus -i image/linux-lzma.trx -r R6400,3.0.0.4,image/tomato-R6400-$(V1)$(V2)-$(current_BUILD_DESC).trx
 else
-	ctools/trx_asus -i image/linux-lzma.trx -r R7000,3.0.0.4,image/tomato-R7000-$(V1)$(V2)-$(current_BUILD_DESC).trx
-	ctools/trx_asus -i image/linux-lzma.trx -r R6300v2,3.0.0.4,image/tomato-R6300v2-$(V1)$(V2)-$(current_BUILD_DESC).trx
-	ctools/trx_asus -i image/linux-lzma.trx -r R6250,3.0.0.4,image/tomato-R6250-$(V1)$(V2)-$(current_BUILD_DESC).trx
+##	ctools/trx_asus -i image/linux-lzma.trx -r R7000,3.0.0.4,image/tomato-R7000-$(V1)$(V2)-$(current_BUILD_DESC).trx
+##	ctools/trx_asus -i image/linux-lzma.trx -r R6300v2,3.0.0.4,image/tomato-R6300v2-$(V1)$(V2)-$(current_BUILD_DESC).trx
+##	ctools/trx_asus -i image/linux-lzma.trx -r R6250,3.0.0.4,image/tomato-R6250-$(V1)$(V2)-$(current_BUILD_DESC).trx
 endif
 endif
 endif

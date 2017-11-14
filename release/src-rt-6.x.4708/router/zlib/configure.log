@@ -1,0 +1,1148 @@
+--------------------
+./configure --shared --prefix=/usr --libdir=/usr/lib
+Wed Nov  8 20:15:34 EST 2017
+=== ztest12004.c ===
+extern int getchar();
+int hello() {return getchar();}
+===
+arm-brcm-linux-uclibcgnueabi-gcc -c ztest12004.c
+... using gcc
+
+Checking for obsessive-compulsive compiler options...
+=== ztest12004.c ===
+int foo() { return 0; }
+===
+arm-brcm-linux-uclibcgnueabi-gcc -c -Os -Wall -DLINUX26 -DCONFIG_BCMWL5 -DCONFIG_BCMWL6 -DCONFIG_BCMWL6A -DPART_JFFS2_GAP=0UL -pipe -fno-strict-aliasing -DBCMWPA2 -DBCMARM -marm -DTCONFIG_NVRAM_64K -DLINUX_KERNEL_VERSION=132644 -fPIC ztest12004.c
+
+Checking for shared library support...
+=== ztest12004.c ===
+extern int getchar();
+int hello() {return getchar();}
+===
+arm-brcm-linux-uclibcgnueabi-gcc -w -c -Os -Wall -DLINUX26 -DCONFIG_BCMWL5 -DCONFIG_BCMWL6 -DCONFIG_BCMWL6A -DPART_JFFS2_GAP=0UL -pipe -fno-strict-aliasing -DBCMWPA2 -DBCMARM -marm -DTCONFIG_NVRAM_64K -DLINUX_KERNEL_VERSION=132644 -fPIC -fPIC ztest12004.c
+arm-brcm-linux-uclibcgnueabi-gcc -shared -Wl,-soname,libz.so.1,--version-script,zlib.map -Os -Wall -DLINUX26 -DCONFIG_BCMWL5 -DCONFIG_BCMWL6 -DCONFIG_BCMWL6A -DPART_JFFS2_GAP=0UL -pipe -fno-strict-aliasing -DBCMWPA2 -DBCMARM -marm -DTCONFIG_NVRAM_64K -DLINUX_KERNEL_VERSION=132644 -fPIC -fPIC -o ztest12004.so ztest12004.o
+Building shared library libz.so.1.2.11 with arm-brcm-linux-uclibcgnueabi-gcc.
+
+=== ztest12004.c ===
+#include <stdio.h>
+#include <stdlib.h>
+size_t dummy = 0;
+===
+arm-brcm-linux-uclibcgnueabi-gcc -c -Os -Wall -DLINUX26 -DCONFIG_BCMWL5 -DCONFIG_BCMWL6 -DCONFIG_BCMWL6A -DPART_JFFS2_GAP=0UL -pipe -fno-strict-aliasing -DBCMWPA2 -DBCMARM -marm -DTCONFIG_NVRAM_64K -DLINUX_KERNEL_VERSION=132644 -fPIC ztest12004.c
+Checking for size_t... Yes.
+
+
+=== ztest12004.c ===
+#include <sys/types.h>
+off64_t dummy = 0;
+===
+arm-brcm-linux-uclibcgnueabi-gcc -c -Os -Wall -DLINUX26 -DCONFIG_BCMWL5 -DCONFIG_BCMWL6 -DCONFIG_BCMWL6A -DPART_JFFS2_GAP=0UL -pipe -fno-strict-aliasing -DBCMWPA2 -DBCMARM -marm -DTCONFIG_NVRAM_64K -DLINUX_KERNEL_VERSION=132644 -fPIC -D_LARGEFILE64_SOURCE=1 ztest12004.c
+Checking for off64_t... Yes.
+Checking for fseeko... Yes.
+
+=== ztest12004.c ===
+#include <string.h>
+#include <errno.h>
+int main() { return strlen(strerror(errno)); }
+===
+arm-brcm-linux-uclibcgnueabi-gcc -Os -Wall -DLINUX26 -DCONFIG_BCMWL5 -DCONFIG_BCMWL6 -DCONFIG_BCMWL6A -DPART_JFFS2_GAP=0UL -pipe -fno-strict-aliasing -DBCMWPA2 -DBCMARM -marm -DTCONFIG_NVRAM_64K -DLINUX_KERNEL_VERSION=132644 -fPIC -D_LARGEFILE64_SOURCE=1 -o ztest12004 ztest12004.c
+Checking for strerror... Yes.
+
+=== ztest12004.c ===
+#include <unistd.h>
+int main() { return 0; }
+===
+arm-brcm-linux-uclibcgnueabi-gcc -c -Os -Wall -DLINUX26 -DCONFIG_BCMWL5 -DCONFIG_BCMWL6 -DCONFIG_BCMWL6A -DPART_JFFS2_GAP=0UL -pipe -fno-strict-aliasing -DBCMWPA2 -DBCMARM -marm -DTCONFIG_NVRAM_64K -DLINUX_KERNEL_VERSION=132644 -fPIC -D_LARGEFILE64_SOURCE=1 ztest12004.c
+Checking for unistd.h... Yes.
+
+=== ztest12004.c ===
+#include <stdarg.h>
+int main() { return 0; }
+===
+arm-brcm-linux-uclibcgnueabi-gcc -c -Os -Wall -DLINUX26 -DCONFIG_BCMWL5 -DCONFIG_BCMWL6 -DCONFIG_BCMWL6A -DPART_JFFS2_GAP=0UL -pipe -fno-strict-aliasing -DBCMWPA2 -DBCMARM -marm -DTCONFIG_NVRAM_64K -DLINUX_KERNEL_VERSION=132644 -fPIC -D_LARGEFILE64_SOURCE=1 ztest12004.c
+Checking for stdarg.h... Yes.
+
+=== ztest12004.c ===
+#include <stdio.h>
+#include <stdarg.h>
+#include "zconf.h"
+int main()
+{
+#ifndef STDC
+  choke me
+#endif
+  return 0;
+}
+===
+arm-brcm-linux-uclibcgnueabi-gcc -c -Os -Wall -DLINUX26 -DCONFIG_BCMWL5 -DCONFIG_BCMWL6 -DCONFIG_BCMWL6A -DPART_JFFS2_GAP=0UL -pipe -fno-strict-aliasing -DBCMWPA2 -DBCMARM -marm -DTCONFIG_NVRAM_64K -DLINUX_KERNEL_VERSION=132644 -fPIC -D_LARGEFILE64_SOURCE=1 ztest12004.c
+Checking whether to use vs[n]printf() or s[n]printf()... using vs[n]printf().
+
+=== ztest12004.c ===
+#include <stdio.h>
+#include <stdarg.h>
+int mytest(const char *fmt, ...)
+{
+  char buf[20];
+  va_list ap;
+  va_start(ap, fmt);
+  vsnprintf(buf, sizeof(buf), fmt, ap);
+  va_end(ap);
+  return 0;
+}
+int main()
+{
+  return (mytest("Hello%d\n", 1));
+}
+===
+arm-brcm-linux-uclibcgnueabi-gcc -Os -Wall -DLINUX26 -DCONFIG_BCMWL5 -DCONFIG_BCMWL6 -DCONFIG_BCMWL6A -DPART_JFFS2_GAP=0UL -pipe -fno-strict-aliasing -DBCMWPA2 -DBCMARM -marm -DTCONFIG_NVRAM_64K -DLINUX_KERNEL_VERSION=132644 -fPIC -D_LARGEFILE64_SOURCE=1 -o ztest12004 ztest12004.c
+Checking for vsnprintf() in stdio.h... Yes.
+
+=== ztest12004.c ===
+#include <stdio.h>
+#include <stdarg.h>
+int mytest(const char *fmt, ...)
+{
+  int n;
+  char buf[20];
+  va_list ap;
+  va_start(ap, fmt);
+  n = vsnprintf(buf, sizeof(buf), fmt, ap);
+  va_end(ap);
+  return n;
+}
+int main()
+{
+  return (mytest("Hello%d\n", 1));
+}
+===
+arm-brcm-linux-uclibcgnueabi-gcc -c -Os -Wall -DLINUX26 -DCONFIG_BCMWL5 -DCONFIG_BCMWL6 -DCONFIG_BCMWL6A -DPART_JFFS2_GAP=0UL -pipe -fno-strict-aliasing -DBCMWPA2 -DBCMARM -marm -DTCONFIG_NVRAM_64K -DLINUX_KERNEL_VERSION=132644 -fPIC -D_LARGEFILE64_SOURCE=1 ztest12004.c
+Checking for return value of vsnprintf()... Yes.
+
+=== ztest12004.c ===
+#define ZLIB_INTERNAL __attribute__((visibility ("hidden")))
+int ZLIB_INTERNAL foo;
+int main()
+{
+  return 0;
+}
+===
+arm-brcm-linux-uclibcgnueabi-gcc -c -Os -Wall -DLINUX26 -DCONFIG_BCMWL5 -DCONFIG_BCMWL6 -DCONFIG_BCMWL6A -DPART_JFFS2_GAP=0UL -pipe -fno-strict-aliasing -DBCMWPA2 -DBCMARM -marm -DTCONFIG_NVRAM_64K -DLINUX_KERNEL_VERSION=132644 -fPIC -D_LARGEFILE64_SOURCE=1 ztest12004.c
+Checking for attribute(visibility) support... Yes.
+
+ALL = static shared all64
+AR = arm-brcm-linux-uclibcgnueabi-ar
+ARFLAGS = rc
+CC = arm-brcm-linux-uclibcgnueabi-gcc
+CFLAGS = -Os -Wall -DLINUX26 -DCONFIG_BCMWL5 -DCONFIG_BCMWL6 -DCONFIG_BCMWL6A -DPART_JFFS2_GAP=0UL -pipe -fno-strict-aliasing -DBCMWPA2 -DBCMARM -marm -DTCONFIG_NVRAM_64K -DLINUX_KERNEL_VERSION=132644 -fPIC -D_LARGEFILE64_SOURCE=1 -DHAVE_HIDDEN
+CPP = arm-brcm-linux-uclibcgnueabi-gcc -E
+EXE =
+LDCONFIG = ldconfig
+LDFLAGS =
+LDSHARED = arm-brcm-linux-uclibcgnueabi-gcc -shared -Wl,-soname,libz.so.1,--version-script,zlib.map
+LDSHAREDLIBC = -lgcc_s
+OBJC = $(OBJZ) $(OBJG)
+PIC_OBJC = $(PIC_OBJZ) $(PIC_OBJG)
+RANLIB = arm-brcm-linux-uclibcgnueabi-ranlib
+SFLAGS = -Os -Wall -DLINUX26 -DCONFIG_BCMWL5 -DCONFIG_BCMWL6 -DCONFIG_BCMWL6A -DPART_JFFS2_GAP=0UL -pipe -fno-strict-aliasing -DBCMWPA2 -DBCMARM -marm -DTCONFIG_NVRAM_64K -DLINUX_KERNEL_VERSION=132644 -fPIC -fPIC -D_LARGEFILE64_SOURCE=1 -DHAVE_HIDDEN
+SHAREDLIB = libz.so
+SHAREDLIBM = libz.so.1
+SHAREDLIBV = libz.so.1.2.11
+STATICLIB = libz.a
+TEST = all teststatic testshared test64
+VER = 1.2.11
+Z_U4 =
+SRCDIR =
+exec_prefix = ${prefix}
+includedir = ${prefix}/include
+libdir = /usr/lib
+mandir = ${prefix}/share/man
+prefix = /usr
+sharedlibdir = ${libdir}
+uname = Linux
+--------------------
+
+
+--------------------
+./configure --shared --prefix=/usr --libdir=/usr/lib
+Fri Nov 10 08:45:57 EST 2017
+=== ztest21071.c ===
+extern int getchar();
+int hello() {return getchar();}
+===
+arm-brcm-linux-uclibcgnueabi-gcc -c ztest21071.c
+... using gcc
+
+Checking for obsessive-compulsive compiler options...
+=== ztest21071.c ===
+int foo() { return 0; }
+===
+arm-brcm-linux-uclibcgnueabi-gcc -c -Os -Wall -DLINUX26 -DCONFIG_BCMWL5 -DCONFIG_BCMWL6 -DCONFIG_BCMWL6A -DPART_JFFS2_GAP=0UL -pipe -fno-strict-aliasing -DBCMWPA2 -DBCMARM -marm -DTCONFIG_NVRAM_64K -DLINUX_KERNEL_VERSION=132644 -fPIC ztest21071.c
+
+Checking for shared library support...
+=== ztest21071.c ===
+extern int getchar();
+int hello() {return getchar();}
+===
+arm-brcm-linux-uclibcgnueabi-gcc -w -c -Os -Wall -DLINUX26 -DCONFIG_BCMWL5 -DCONFIG_BCMWL6 -DCONFIG_BCMWL6A -DPART_JFFS2_GAP=0UL -pipe -fno-strict-aliasing -DBCMWPA2 -DBCMARM -marm -DTCONFIG_NVRAM_64K -DLINUX_KERNEL_VERSION=132644 -fPIC -fPIC ztest21071.c
+arm-brcm-linux-uclibcgnueabi-gcc -shared -Wl,-soname,libz.so.1,--version-script,zlib.map -Os -Wall -DLINUX26 -DCONFIG_BCMWL5 -DCONFIG_BCMWL6 -DCONFIG_BCMWL6A -DPART_JFFS2_GAP=0UL -pipe -fno-strict-aliasing -DBCMWPA2 -DBCMARM -marm -DTCONFIG_NVRAM_64K -DLINUX_KERNEL_VERSION=132644 -fPIC -fPIC -o ztest21071.so ztest21071.o
+Building shared library libz.so.1.2.11 with arm-brcm-linux-uclibcgnueabi-gcc.
+
+=== ztest21071.c ===
+#include <stdio.h>
+#include <stdlib.h>
+size_t dummy = 0;
+===
+arm-brcm-linux-uclibcgnueabi-gcc -c -Os -Wall -DLINUX26 -DCONFIG_BCMWL5 -DCONFIG_BCMWL6 -DCONFIG_BCMWL6A -DPART_JFFS2_GAP=0UL -pipe -fno-strict-aliasing -DBCMWPA2 -DBCMARM -marm -DTCONFIG_NVRAM_64K -DLINUX_KERNEL_VERSION=132644 -fPIC ztest21071.c
+Checking for size_t... Yes.
+
+
+=== ztest21071.c ===
+#include <sys/types.h>
+off64_t dummy = 0;
+===
+arm-brcm-linux-uclibcgnueabi-gcc -c -Os -Wall -DLINUX26 -DCONFIG_BCMWL5 -DCONFIG_BCMWL6 -DCONFIG_BCMWL6A -DPART_JFFS2_GAP=0UL -pipe -fno-strict-aliasing -DBCMWPA2 -DBCMARM -marm -DTCONFIG_NVRAM_64K -DLINUX_KERNEL_VERSION=132644 -fPIC -D_LARGEFILE64_SOURCE=1 ztest21071.c
+Checking for off64_t... Yes.
+Checking for fseeko... Yes.
+
+=== ztest21071.c ===
+#include <string.h>
+#include <errno.h>
+int main() { return strlen(strerror(errno)); }
+===
+arm-brcm-linux-uclibcgnueabi-gcc -Os -Wall -DLINUX26 -DCONFIG_BCMWL5 -DCONFIG_BCMWL6 -DCONFIG_BCMWL6A -DPART_JFFS2_GAP=0UL -pipe -fno-strict-aliasing -DBCMWPA2 -DBCMARM -marm -DTCONFIG_NVRAM_64K -DLINUX_KERNEL_VERSION=132644 -fPIC -D_LARGEFILE64_SOURCE=1 -o ztest21071 ztest21071.c
+Checking for strerror... Yes.
+
+=== ztest21071.c ===
+#include <unistd.h>
+int main() { return 0; }
+===
+arm-brcm-linux-uclibcgnueabi-gcc -c -Os -Wall -DLINUX26 -DCONFIG_BCMWL5 -DCONFIG_BCMWL6 -DCONFIG_BCMWL6A -DPART_JFFS2_GAP=0UL -pipe -fno-strict-aliasing -DBCMWPA2 -DBCMARM -marm -DTCONFIG_NVRAM_64K -DLINUX_KERNEL_VERSION=132644 -fPIC -D_LARGEFILE64_SOURCE=1 ztest21071.c
+Checking for unistd.h... Yes.
+
+=== ztest21071.c ===
+#include <stdarg.h>
+int main() { return 0; }
+===
+arm-brcm-linux-uclibcgnueabi-gcc -c -Os -Wall -DLINUX26 -DCONFIG_BCMWL5 -DCONFIG_BCMWL6 -DCONFIG_BCMWL6A -DPART_JFFS2_GAP=0UL -pipe -fno-strict-aliasing -DBCMWPA2 -DBCMARM -marm -DTCONFIG_NVRAM_64K -DLINUX_KERNEL_VERSION=132644 -fPIC -D_LARGEFILE64_SOURCE=1 ztest21071.c
+Checking for stdarg.h... Yes.
+
+=== ztest21071.c ===
+#include <stdio.h>
+#include <stdarg.h>
+#include "zconf.h"
+int main()
+{
+#ifndef STDC
+  choke me
+#endif
+  return 0;
+}
+===
+arm-brcm-linux-uclibcgnueabi-gcc -c -Os -Wall -DLINUX26 -DCONFIG_BCMWL5 -DCONFIG_BCMWL6 -DCONFIG_BCMWL6A -DPART_JFFS2_GAP=0UL -pipe -fno-strict-aliasing -DBCMWPA2 -DBCMARM -marm -DTCONFIG_NVRAM_64K -DLINUX_KERNEL_VERSION=132644 -fPIC -D_LARGEFILE64_SOURCE=1 ztest21071.c
+Checking whether to use vs[n]printf() or s[n]printf()... using vs[n]printf().
+
+=== ztest21071.c ===
+#include <stdio.h>
+#include <stdarg.h>
+int mytest(const char *fmt, ...)
+{
+  char buf[20];
+  va_list ap;
+  va_start(ap, fmt);
+  vsnprintf(buf, sizeof(buf), fmt, ap);
+  va_end(ap);
+  return 0;
+}
+int main()
+{
+  return (mytest("Hello%d\n", 1));
+}
+===
+arm-brcm-linux-uclibcgnueabi-gcc -Os -Wall -DLINUX26 -DCONFIG_BCMWL5 -DCONFIG_BCMWL6 -DCONFIG_BCMWL6A -DPART_JFFS2_GAP=0UL -pipe -fno-strict-aliasing -DBCMWPA2 -DBCMARM -marm -DTCONFIG_NVRAM_64K -DLINUX_KERNEL_VERSION=132644 -fPIC -D_LARGEFILE64_SOURCE=1 -o ztest21071 ztest21071.c
+Checking for vsnprintf() in stdio.h... Yes.
+
+=== ztest21071.c ===
+#include <stdio.h>
+#include <stdarg.h>
+int mytest(const char *fmt, ...)
+{
+  int n;
+  char buf[20];
+  va_list ap;
+  va_start(ap, fmt);
+  n = vsnprintf(buf, sizeof(buf), fmt, ap);
+  va_end(ap);
+  return n;
+}
+int main()
+{
+  return (mytest("Hello%d\n", 1));
+}
+===
+arm-brcm-linux-uclibcgnueabi-gcc -c -Os -Wall -DLINUX26 -DCONFIG_BCMWL5 -DCONFIG_BCMWL6 -DCONFIG_BCMWL6A -DPART_JFFS2_GAP=0UL -pipe -fno-strict-aliasing -DBCMWPA2 -DBCMARM -marm -DTCONFIG_NVRAM_64K -DLINUX_KERNEL_VERSION=132644 -fPIC -D_LARGEFILE64_SOURCE=1 ztest21071.c
+Checking for return value of vsnprintf()... Yes.
+
+=== ztest21071.c ===
+#define ZLIB_INTERNAL __attribute__((visibility ("hidden")))
+int ZLIB_INTERNAL foo;
+int main()
+{
+  return 0;
+}
+===
+arm-brcm-linux-uclibcgnueabi-gcc -c -Os -Wall -DLINUX26 -DCONFIG_BCMWL5 -DCONFIG_BCMWL6 -DCONFIG_BCMWL6A -DPART_JFFS2_GAP=0UL -pipe -fno-strict-aliasing -DBCMWPA2 -DBCMARM -marm -DTCONFIG_NVRAM_64K -DLINUX_KERNEL_VERSION=132644 -fPIC -D_LARGEFILE64_SOURCE=1 ztest21071.c
+Checking for attribute(visibility) support... Yes.
+
+ALL = static shared all64
+AR = arm-brcm-linux-uclibcgnueabi-ar
+ARFLAGS = rc
+CC = arm-brcm-linux-uclibcgnueabi-gcc
+CFLAGS = -Os -Wall -DLINUX26 -DCONFIG_BCMWL5 -DCONFIG_BCMWL6 -DCONFIG_BCMWL6A -DPART_JFFS2_GAP=0UL -pipe -fno-strict-aliasing -DBCMWPA2 -DBCMARM -marm -DTCONFIG_NVRAM_64K -DLINUX_KERNEL_VERSION=132644 -fPIC -D_LARGEFILE64_SOURCE=1 -DHAVE_HIDDEN
+CPP = arm-brcm-linux-uclibcgnueabi-gcc -E
+EXE =
+LDCONFIG = ldconfig
+LDFLAGS =
+LDSHARED = arm-brcm-linux-uclibcgnueabi-gcc -shared -Wl,-soname,libz.so.1,--version-script,zlib.map
+LDSHAREDLIBC = -lgcc_s
+OBJC = $(OBJZ) $(OBJG)
+PIC_OBJC = $(PIC_OBJZ) $(PIC_OBJG)
+RANLIB = arm-brcm-linux-uclibcgnueabi-ranlib
+SFLAGS = -Os -Wall -DLINUX26 -DCONFIG_BCMWL5 -DCONFIG_BCMWL6 -DCONFIG_BCMWL6A -DPART_JFFS2_GAP=0UL -pipe -fno-strict-aliasing -DBCMWPA2 -DBCMARM -marm -DTCONFIG_NVRAM_64K -DLINUX_KERNEL_VERSION=132644 -fPIC -fPIC -D_LARGEFILE64_SOURCE=1 -DHAVE_HIDDEN
+SHAREDLIB = libz.so
+SHAREDLIBM = libz.so.1
+SHAREDLIBV = libz.so.1.2.11
+STATICLIB = libz.a
+TEST = all teststatic testshared test64
+VER = 1.2.11
+Z_U4 =
+SRCDIR =
+exec_prefix = ${prefix}
+includedir = ${prefix}/include
+libdir = /usr/lib
+mandir = ${prefix}/share/man
+prefix = /usr
+sharedlibdir = ${libdir}
+uname = Linux
+--------------------
+
+
+--------------------
+./configure --shared --prefix=/usr --libdir=/usr/lib
+Sat Nov 11 05:49:48 EST 2017
+=== ztest31828.c ===
+extern int getchar();
+int hello() {return getchar();}
+===
+arm-brcm-linux-uclibcgnueabi-gcc -c ztest31828.c
+... using gcc
+
+Checking for obsessive-compulsive compiler options...
+=== ztest31828.c ===
+int foo() { return 0; }
+===
+arm-brcm-linux-uclibcgnueabi-gcc -c -Os -Wall -DLINUX26 -DCONFIG_BCMWL5 -DCONFIG_BCMWL6 -DCONFIG_BCMWL6A -DPART_JFFS2_GAP=0UL -pipe -fno-strict-aliasing -DBCMWPA2 -DBCMARM -marm -DTCONFIG_NVRAM_64K -DLINUX_KERNEL_VERSION=132644 -fPIC ztest31828.c
+
+Checking for shared library support...
+=== ztest31828.c ===
+extern int getchar();
+int hello() {return getchar();}
+===
+arm-brcm-linux-uclibcgnueabi-gcc -w -c -Os -Wall -DLINUX26 -DCONFIG_BCMWL5 -DCONFIG_BCMWL6 -DCONFIG_BCMWL6A -DPART_JFFS2_GAP=0UL -pipe -fno-strict-aliasing -DBCMWPA2 -DBCMARM -marm -DTCONFIG_NVRAM_64K -DLINUX_KERNEL_VERSION=132644 -fPIC -fPIC ztest31828.c
+arm-brcm-linux-uclibcgnueabi-gcc -shared -Wl,-soname,libz.so.1,--version-script,zlib.map -Os -Wall -DLINUX26 -DCONFIG_BCMWL5 -DCONFIG_BCMWL6 -DCONFIG_BCMWL6A -DPART_JFFS2_GAP=0UL -pipe -fno-strict-aliasing -DBCMWPA2 -DBCMARM -marm -DTCONFIG_NVRAM_64K -DLINUX_KERNEL_VERSION=132644 -fPIC -fPIC -o ztest31828.so ztest31828.o
+Building shared library libz.so.1.2.11 with arm-brcm-linux-uclibcgnueabi-gcc.
+
+=== ztest31828.c ===
+#include <stdio.h>
+#include <stdlib.h>
+size_t dummy = 0;
+===
+arm-brcm-linux-uclibcgnueabi-gcc -c -Os -Wall -DLINUX26 -DCONFIG_BCMWL5 -DCONFIG_BCMWL6 -DCONFIG_BCMWL6A -DPART_JFFS2_GAP=0UL -pipe -fno-strict-aliasing -DBCMWPA2 -DBCMARM -marm -DTCONFIG_NVRAM_64K -DLINUX_KERNEL_VERSION=132644 -fPIC ztest31828.c
+Checking for size_t... Yes.
+
+
+=== ztest31828.c ===
+#include <sys/types.h>
+off64_t dummy = 0;
+===
+arm-brcm-linux-uclibcgnueabi-gcc -c -Os -Wall -DLINUX26 -DCONFIG_BCMWL5 -DCONFIG_BCMWL6 -DCONFIG_BCMWL6A -DPART_JFFS2_GAP=0UL -pipe -fno-strict-aliasing -DBCMWPA2 -DBCMARM -marm -DTCONFIG_NVRAM_64K -DLINUX_KERNEL_VERSION=132644 -fPIC -D_LARGEFILE64_SOURCE=1 ztest31828.c
+Checking for off64_t... Yes.
+Checking for fseeko... Yes.
+
+=== ztest31828.c ===
+#include <string.h>
+#include <errno.h>
+int main() { return strlen(strerror(errno)); }
+===
+arm-brcm-linux-uclibcgnueabi-gcc -Os -Wall -DLINUX26 -DCONFIG_BCMWL5 -DCONFIG_BCMWL6 -DCONFIG_BCMWL6A -DPART_JFFS2_GAP=0UL -pipe -fno-strict-aliasing -DBCMWPA2 -DBCMARM -marm -DTCONFIG_NVRAM_64K -DLINUX_KERNEL_VERSION=132644 -fPIC -D_LARGEFILE64_SOURCE=1 -o ztest31828 ztest31828.c
+Checking for strerror... Yes.
+
+=== ztest31828.c ===
+#include <unistd.h>
+int main() { return 0; }
+===
+arm-brcm-linux-uclibcgnueabi-gcc -c -Os -Wall -DLINUX26 -DCONFIG_BCMWL5 -DCONFIG_BCMWL6 -DCONFIG_BCMWL6A -DPART_JFFS2_GAP=0UL -pipe -fno-strict-aliasing -DBCMWPA2 -DBCMARM -marm -DTCONFIG_NVRAM_64K -DLINUX_KERNEL_VERSION=132644 -fPIC -D_LARGEFILE64_SOURCE=1 ztest31828.c
+Checking for unistd.h... Yes.
+
+=== ztest31828.c ===
+#include <stdarg.h>
+int main() { return 0; }
+===
+arm-brcm-linux-uclibcgnueabi-gcc -c -Os -Wall -DLINUX26 -DCONFIG_BCMWL5 -DCONFIG_BCMWL6 -DCONFIG_BCMWL6A -DPART_JFFS2_GAP=0UL -pipe -fno-strict-aliasing -DBCMWPA2 -DBCMARM -marm -DTCONFIG_NVRAM_64K -DLINUX_KERNEL_VERSION=132644 -fPIC -D_LARGEFILE64_SOURCE=1 ztest31828.c
+Checking for stdarg.h... Yes.
+
+=== ztest31828.c ===
+#include <stdio.h>
+#include <stdarg.h>
+#include "zconf.h"
+int main()
+{
+#ifndef STDC
+  choke me
+#endif
+  return 0;
+}
+===
+arm-brcm-linux-uclibcgnueabi-gcc -c -Os -Wall -DLINUX26 -DCONFIG_BCMWL5 -DCONFIG_BCMWL6 -DCONFIG_BCMWL6A -DPART_JFFS2_GAP=0UL -pipe -fno-strict-aliasing -DBCMWPA2 -DBCMARM -marm -DTCONFIG_NVRAM_64K -DLINUX_KERNEL_VERSION=132644 -fPIC -D_LARGEFILE64_SOURCE=1 ztest31828.c
+Checking whether to use vs[n]printf() or s[n]printf()... using vs[n]printf().
+
+=== ztest31828.c ===
+#include <stdio.h>
+#include <stdarg.h>
+int mytest(const char *fmt, ...)
+{
+  char buf[20];
+  va_list ap;
+  va_start(ap, fmt);
+  vsnprintf(buf, sizeof(buf), fmt, ap);
+  va_end(ap);
+  return 0;
+}
+int main()
+{
+  return (mytest("Hello%d\n", 1));
+}
+===
+arm-brcm-linux-uclibcgnueabi-gcc -Os -Wall -DLINUX26 -DCONFIG_BCMWL5 -DCONFIG_BCMWL6 -DCONFIG_BCMWL6A -DPART_JFFS2_GAP=0UL -pipe -fno-strict-aliasing -DBCMWPA2 -DBCMARM -marm -DTCONFIG_NVRAM_64K -DLINUX_KERNEL_VERSION=132644 -fPIC -D_LARGEFILE64_SOURCE=1 -o ztest31828 ztest31828.c
+Checking for vsnprintf() in stdio.h... Yes.
+
+=== ztest31828.c ===
+#include <stdio.h>
+#include <stdarg.h>
+int mytest(const char *fmt, ...)
+{
+  int n;
+  char buf[20];
+  va_list ap;
+  va_start(ap, fmt);
+  n = vsnprintf(buf, sizeof(buf), fmt, ap);
+  va_end(ap);
+  return n;
+}
+int main()
+{
+  return (mytest("Hello%d\n", 1));
+}
+===
+arm-brcm-linux-uclibcgnueabi-gcc -c -Os -Wall -DLINUX26 -DCONFIG_BCMWL5 -DCONFIG_BCMWL6 -DCONFIG_BCMWL6A -DPART_JFFS2_GAP=0UL -pipe -fno-strict-aliasing -DBCMWPA2 -DBCMARM -marm -DTCONFIG_NVRAM_64K -DLINUX_KERNEL_VERSION=132644 -fPIC -D_LARGEFILE64_SOURCE=1 ztest31828.c
+Checking for return value of vsnprintf()... Yes.
+
+=== ztest31828.c ===
+#define ZLIB_INTERNAL __attribute__((visibility ("hidden")))
+int ZLIB_INTERNAL foo;
+int main()
+{
+  return 0;
+}
+===
+arm-brcm-linux-uclibcgnueabi-gcc -c -Os -Wall -DLINUX26 -DCONFIG_BCMWL5 -DCONFIG_BCMWL6 -DCONFIG_BCMWL6A -DPART_JFFS2_GAP=0UL -pipe -fno-strict-aliasing -DBCMWPA2 -DBCMARM -marm -DTCONFIG_NVRAM_64K -DLINUX_KERNEL_VERSION=132644 -fPIC -D_LARGEFILE64_SOURCE=1 ztest31828.c
+Checking for attribute(visibility) support... Yes.
+
+ALL = static shared all64
+AR = arm-brcm-linux-uclibcgnueabi-ar
+ARFLAGS = rc
+CC = arm-brcm-linux-uclibcgnueabi-gcc
+CFLAGS = -Os -Wall -DLINUX26 -DCONFIG_BCMWL5 -DCONFIG_BCMWL6 -DCONFIG_BCMWL6A -DPART_JFFS2_GAP=0UL -pipe -fno-strict-aliasing -DBCMWPA2 -DBCMARM -marm -DTCONFIG_NVRAM_64K -DLINUX_KERNEL_VERSION=132644 -fPIC -D_LARGEFILE64_SOURCE=1 -DHAVE_HIDDEN
+CPP = arm-brcm-linux-uclibcgnueabi-gcc -E
+EXE =
+LDCONFIG = ldconfig
+LDFLAGS =
+LDSHARED = arm-brcm-linux-uclibcgnueabi-gcc -shared -Wl,-soname,libz.so.1,--version-script,zlib.map
+LDSHAREDLIBC = -lgcc_s
+OBJC = $(OBJZ) $(OBJG)
+PIC_OBJC = $(PIC_OBJZ) $(PIC_OBJG)
+RANLIB = arm-brcm-linux-uclibcgnueabi-ranlib
+SFLAGS = -Os -Wall -DLINUX26 -DCONFIG_BCMWL5 -DCONFIG_BCMWL6 -DCONFIG_BCMWL6A -DPART_JFFS2_GAP=0UL -pipe -fno-strict-aliasing -DBCMWPA2 -DBCMARM -marm -DTCONFIG_NVRAM_64K -DLINUX_KERNEL_VERSION=132644 -fPIC -fPIC -D_LARGEFILE64_SOURCE=1 -DHAVE_HIDDEN
+SHAREDLIB = libz.so
+SHAREDLIBM = libz.so.1
+SHAREDLIBV = libz.so.1.2.11
+STATICLIB = libz.a
+TEST = all teststatic testshared test64
+VER = 1.2.11
+Z_U4 =
+SRCDIR =
+exec_prefix = ${prefix}
+includedir = ${prefix}/include
+libdir = /usr/lib
+mandir = ${prefix}/share/man
+prefix = /usr
+sharedlibdir = ${libdir}
+uname = Linux
+--------------------
+
+
+--------------------
+./configure --shared --prefix=/usr --libdir=/usr/lib
+Sat Nov 11 21:10:18 EST 2017
+=== ztest3600.c ===
+extern int getchar();
+int hello() {return getchar();}
+===
+arm-brcm-linux-uclibcgnueabi-gcc -c ztest3600.c
+... using gcc
+
+Checking for obsessive-compulsive compiler options...
+=== ztest3600.c ===
+int foo() { return 0; }
+===
+arm-brcm-linux-uclibcgnueabi-gcc -c -Os -Wall -DLINUX26 -DCONFIG_BCMWL5 -DCONFIG_BCMWL6 -DCONFIG_BCMWL6A -DPART_JFFS2_GAP=0UL -pipe -fno-strict-aliasing -DBCMWPA2 -DBCMARM -marm -DTCONFIG_NVRAM_64K -DLINUX_KERNEL_VERSION=132644 -fPIC ztest3600.c
+
+Checking for shared library support...
+=== ztest3600.c ===
+extern int getchar();
+int hello() {return getchar();}
+===
+arm-brcm-linux-uclibcgnueabi-gcc -w -c -Os -Wall -DLINUX26 -DCONFIG_BCMWL5 -DCONFIG_BCMWL6 -DCONFIG_BCMWL6A -DPART_JFFS2_GAP=0UL -pipe -fno-strict-aliasing -DBCMWPA2 -DBCMARM -marm -DTCONFIG_NVRAM_64K -DLINUX_KERNEL_VERSION=132644 -fPIC -fPIC ztest3600.c
+arm-brcm-linux-uclibcgnueabi-gcc -shared -Wl,-soname,libz.so.1,--version-script,zlib.map -Os -Wall -DLINUX26 -DCONFIG_BCMWL5 -DCONFIG_BCMWL6 -DCONFIG_BCMWL6A -DPART_JFFS2_GAP=0UL -pipe -fno-strict-aliasing -DBCMWPA2 -DBCMARM -marm -DTCONFIG_NVRAM_64K -DLINUX_KERNEL_VERSION=132644 -fPIC -fPIC -o ztest3600.so ztest3600.o
+Building shared library libz.so.1.2.11 with arm-brcm-linux-uclibcgnueabi-gcc.
+
+=== ztest3600.c ===
+#include <stdio.h>
+#include <stdlib.h>
+size_t dummy = 0;
+===
+arm-brcm-linux-uclibcgnueabi-gcc -c -Os -Wall -DLINUX26 -DCONFIG_BCMWL5 -DCONFIG_BCMWL6 -DCONFIG_BCMWL6A -DPART_JFFS2_GAP=0UL -pipe -fno-strict-aliasing -DBCMWPA2 -DBCMARM -marm -DTCONFIG_NVRAM_64K -DLINUX_KERNEL_VERSION=132644 -fPIC ztest3600.c
+Checking for size_t... Yes.
+
+
+=== ztest3600.c ===
+#include <sys/types.h>
+off64_t dummy = 0;
+===
+arm-brcm-linux-uclibcgnueabi-gcc -c -Os -Wall -DLINUX26 -DCONFIG_BCMWL5 -DCONFIG_BCMWL6 -DCONFIG_BCMWL6A -DPART_JFFS2_GAP=0UL -pipe -fno-strict-aliasing -DBCMWPA2 -DBCMARM -marm -DTCONFIG_NVRAM_64K -DLINUX_KERNEL_VERSION=132644 -fPIC -D_LARGEFILE64_SOURCE=1 ztest3600.c
+Checking for off64_t... Yes.
+Checking for fseeko... Yes.
+
+=== ztest3600.c ===
+#include <string.h>
+#include <errno.h>
+int main() { return strlen(strerror(errno)); }
+===
+arm-brcm-linux-uclibcgnueabi-gcc -Os -Wall -DLINUX26 -DCONFIG_BCMWL5 -DCONFIG_BCMWL6 -DCONFIG_BCMWL6A -DPART_JFFS2_GAP=0UL -pipe -fno-strict-aliasing -DBCMWPA2 -DBCMARM -marm -DTCONFIG_NVRAM_64K -DLINUX_KERNEL_VERSION=132644 -fPIC -D_LARGEFILE64_SOURCE=1 -o ztest3600 ztest3600.c
+Checking for strerror... Yes.
+
+=== ztest3600.c ===
+#include <unistd.h>
+int main() { return 0; }
+===
+arm-brcm-linux-uclibcgnueabi-gcc -c -Os -Wall -DLINUX26 -DCONFIG_BCMWL5 -DCONFIG_BCMWL6 -DCONFIG_BCMWL6A -DPART_JFFS2_GAP=0UL -pipe -fno-strict-aliasing -DBCMWPA2 -DBCMARM -marm -DTCONFIG_NVRAM_64K -DLINUX_KERNEL_VERSION=132644 -fPIC -D_LARGEFILE64_SOURCE=1 ztest3600.c
+Checking for unistd.h... Yes.
+
+=== ztest3600.c ===
+#include <stdarg.h>
+int main() { return 0; }
+===
+arm-brcm-linux-uclibcgnueabi-gcc -c -Os -Wall -DLINUX26 -DCONFIG_BCMWL5 -DCONFIG_BCMWL6 -DCONFIG_BCMWL6A -DPART_JFFS2_GAP=0UL -pipe -fno-strict-aliasing -DBCMWPA2 -DBCMARM -marm -DTCONFIG_NVRAM_64K -DLINUX_KERNEL_VERSION=132644 -fPIC -D_LARGEFILE64_SOURCE=1 ztest3600.c
+Checking for stdarg.h... Yes.
+
+=== ztest3600.c ===
+#include <stdio.h>
+#include <stdarg.h>
+#include "zconf.h"
+int main()
+{
+#ifndef STDC
+  choke me
+#endif
+  return 0;
+}
+===
+arm-brcm-linux-uclibcgnueabi-gcc -c -Os -Wall -DLINUX26 -DCONFIG_BCMWL5 -DCONFIG_BCMWL6 -DCONFIG_BCMWL6A -DPART_JFFS2_GAP=0UL -pipe -fno-strict-aliasing -DBCMWPA2 -DBCMARM -marm -DTCONFIG_NVRAM_64K -DLINUX_KERNEL_VERSION=132644 -fPIC -D_LARGEFILE64_SOURCE=1 ztest3600.c
+Checking whether to use vs[n]printf() or s[n]printf()... using vs[n]printf().
+
+=== ztest3600.c ===
+#include <stdio.h>
+#include <stdarg.h>
+int mytest(const char *fmt, ...)
+{
+  char buf[20];
+  va_list ap;
+  va_start(ap, fmt);
+  vsnprintf(buf, sizeof(buf), fmt, ap);
+  va_end(ap);
+  return 0;
+}
+int main()
+{
+  return (mytest("Hello%d\n", 1));
+}
+===
+arm-brcm-linux-uclibcgnueabi-gcc -Os -Wall -DLINUX26 -DCONFIG_BCMWL5 -DCONFIG_BCMWL6 -DCONFIG_BCMWL6A -DPART_JFFS2_GAP=0UL -pipe -fno-strict-aliasing -DBCMWPA2 -DBCMARM -marm -DTCONFIG_NVRAM_64K -DLINUX_KERNEL_VERSION=132644 -fPIC -D_LARGEFILE64_SOURCE=1 -o ztest3600 ztest3600.c
+Checking for vsnprintf() in stdio.h... Yes.
+
+=== ztest3600.c ===
+#include <stdio.h>
+#include <stdarg.h>
+int mytest(const char *fmt, ...)
+{
+  int n;
+  char buf[20];
+  va_list ap;
+  va_start(ap, fmt);
+  n = vsnprintf(buf, sizeof(buf), fmt, ap);
+  va_end(ap);
+  return n;
+}
+int main()
+{
+  return (mytest("Hello%d\n", 1));
+}
+===
+arm-brcm-linux-uclibcgnueabi-gcc -c -Os -Wall -DLINUX26 -DCONFIG_BCMWL5 -DCONFIG_BCMWL6 -DCONFIG_BCMWL6A -DPART_JFFS2_GAP=0UL -pipe -fno-strict-aliasing -DBCMWPA2 -DBCMARM -marm -DTCONFIG_NVRAM_64K -DLINUX_KERNEL_VERSION=132644 -fPIC -D_LARGEFILE64_SOURCE=1 ztest3600.c
+Checking for return value of vsnprintf()... Yes.
+
+=== ztest3600.c ===
+#define ZLIB_INTERNAL __attribute__((visibility ("hidden")))
+int ZLIB_INTERNAL foo;
+int main()
+{
+  return 0;
+}
+===
+arm-brcm-linux-uclibcgnueabi-gcc -c -Os -Wall -DLINUX26 -DCONFIG_BCMWL5 -DCONFIG_BCMWL6 -DCONFIG_BCMWL6A -DPART_JFFS2_GAP=0UL -pipe -fno-strict-aliasing -DBCMWPA2 -DBCMARM -marm -DTCONFIG_NVRAM_64K -DLINUX_KERNEL_VERSION=132644 -fPIC -D_LARGEFILE64_SOURCE=1 ztest3600.c
+Checking for attribute(visibility) support... Yes.
+
+ALL = static shared all64
+AR = arm-brcm-linux-uclibcgnueabi-ar
+ARFLAGS = rc
+CC = arm-brcm-linux-uclibcgnueabi-gcc
+CFLAGS = -Os -Wall -DLINUX26 -DCONFIG_BCMWL5 -DCONFIG_BCMWL6 -DCONFIG_BCMWL6A -DPART_JFFS2_GAP=0UL -pipe -fno-strict-aliasing -DBCMWPA2 -DBCMARM -marm -DTCONFIG_NVRAM_64K -DLINUX_KERNEL_VERSION=132644 -fPIC -D_LARGEFILE64_SOURCE=1 -DHAVE_HIDDEN
+CPP = arm-brcm-linux-uclibcgnueabi-gcc -E
+EXE =
+LDCONFIG = ldconfig
+LDFLAGS =
+LDSHARED = arm-brcm-linux-uclibcgnueabi-gcc -shared -Wl,-soname,libz.so.1,--version-script,zlib.map
+LDSHAREDLIBC = -lgcc_s
+OBJC = $(OBJZ) $(OBJG)
+PIC_OBJC = $(PIC_OBJZ) $(PIC_OBJG)
+RANLIB = arm-brcm-linux-uclibcgnueabi-ranlib
+SFLAGS = -Os -Wall -DLINUX26 -DCONFIG_BCMWL5 -DCONFIG_BCMWL6 -DCONFIG_BCMWL6A -DPART_JFFS2_GAP=0UL -pipe -fno-strict-aliasing -DBCMWPA2 -DBCMARM -marm -DTCONFIG_NVRAM_64K -DLINUX_KERNEL_VERSION=132644 -fPIC -fPIC -D_LARGEFILE64_SOURCE=1 -DHAVE_HIDDEN
+SHAREDLIB = libz.so
+SHAREDLIBM = libz.so.1
+SHAREDLIBV = libz.so.1.2.11
+STATICLIB = libz.a
+TEST = all teststatic testshared test64
+VER = 1.2.11
+Z_U4 =
+SRCDIR =
+exec_prefix = ${prefix}
+includedir = ${prefix}/include
+libdir = /usr/lib
+mandir = ${prefix}/share/man
+prefix = /usr
+sharedlibdir = ${libdir}
+uname = Linux
+--------------------
+
+
+--------------------
+./configure --shared --prefix=/usr --libdir=/usr/lib
+Sun Nov 12 15:19:47 CST 2017
+=== ztest14416.c ===
+extern int getchar();
+int hello() {return getchar();}
+===
+arm-brcm-linux-uclibcgnueabi-gcc -c ztest14416.c
+... using gcc
+
+Checking for obsessive-compulsive compiler options...
+=== ztest14416.c ===
+int foo() { return 0; }
+===
+arm-brcm-linux-uclibcgnueabi-gcc -c -Os -Wall -DLINUX26 -DCONFIG_BCMWL5 -DCONFIG_BCMWL6 -DCONFIG_BCMWL6A -DPART_JFFS2_GAP=0UL -pipe -fno-strict-aliasing -DBCMWPA2 -DBCMARM -marm -DTCONFIG_NVRAM_64K -DLINUX_KERNEL_VERSION=132644 -fPIC ztest14416.c
+
+Checking for shared library support...
+=== ztest14416.c ===
+extern int getchar();
+int hello() {return getchar();}
+===
+arm-brcm-linux-uclibcgnueabi-gcc -w -c -Os -Wall -DLINUX26 -DCONFIG_BCMWL5 -DCONFIG_BCMWL6 -DCONFIG_BCMWL6A -DPART_JFFS2_GAP=0UL -pipe -fno-strict-aliasing -DBCMWPA2 -DBCMARM -marm -DTCONFIG_NVRAM_64K -DLINUX_KERNEL_VERSION=132644 -fPIC -fPIC ztest14416.c
+arm-brcm-linux-uclibcgnueabi-gcc -shared -Wl,-soname,libz.so.1,--version-script,zlib.map -Os -Wall -DLINUX26 -DCONFIG_BCMWL5 -DCONFIG_BCMWL6 -DCONFIG_BCMWL6A -DPART_JFFS2_GAP=0UL -pipe -fno-strict-aliasing -DBCMWPA2 -DBCMARM -marm -DTCONFIG_NVRAM_64K -DLINUX_KERNEL_VERSION=132644 -fPIC -fPIC -o ztest14416.so ztest14416.o
+Building shared library libz.so.1.2.11 with arm-brcm-linux-uclibcgnueabi-gcc.
+
+=== ztest14416.c ===
+#include <stdio.h>
+#include <stdlib.h>
+size_t dummy = 0;
+===
+arm-brcm-linux-uclibcgnueabi-gcc -c -Os -Wall -DLINUX26 -DCONFIG_BCMWL5 -DCONFIG_BCMWL6 -DCONFIG_BCMWL6A -DPART_JFFS2_GAP=0UL -pipe -fno-strict-aliasing -DBCMWPA2 -DBCMARM -marm -DTCONFIG_NVRAM_64K -DLINUX_KERNEL_VERSION=132644 -fPIC ztest14416.c
+Checking for size_t... Yes.
+
+
+=== ztest14416.c ===
+#include <sys/types.h>
+off64_t dummy = 0;
+===
+arm-brcm-linux-uclibcgnueabi-gcc -c -Os -Wall -DLINUX26 -DCONFIG_BCMWL5 -DCONFIG_BCMWL6 -DCONFIG_BCMWL6A -DPART_JFFS2_GAP=0UL -pipe -fno-strict-aliasing -DBCMWPA2 -DBCMARM -marm -DTCONFIG_NVRAM_64K -DLINUX_KERNEL_VERSION=132644 -fPIC -D_LARGEFILE64_SOURCE=1 ztest14416.c
+Checking for off64_t... Yes.
+Checking for fseeko... Yes.
+
+=== ztest14416.c ===
+#include <string.h>
+#include <errno.h>
+int main() { return strlen(strerror(errno)); }
+===
+arm-brcm-linux-uclibcgnueabi-gcc -Os -Wall -DLINUX26 -DCONFIG_BCMWL5 -DCONFIG_BCMWL6 -DCONFIG_BCMWL6A -DPART_JFFS2_GAP=0UL -pipe -fno-strict-aliasing -DBCMWPA2 -DBCMARM -marm -DTCONFIG_NVRAM_64K -DLINUX_KERNEL_VERSION=132644 -fPIC -D_LARGEFILE64_SOURCE=1 -o ztest14416 ztest14416.c
+Checking for strerror... Yes.
+
+=== ztest14416.c ===
+#include <unistd.h>
+int main() { return 0; }
+===
+arm-brcm-linux-uclibcgnueabi-gcc -c -Os -Wall -DLINUX26 -DCONFIG_BCMWL5 -DCONFIG_BCMWL6 -DCONFIG_BCMWL6A -DPART_JFFS2_GAP=0UL -pipe -fno-strict-aliasing -DBCMWPA2 -DBCMARM -marm -DTCONFIG_NVRAM_64K -DLINUX_KERNEL_VERSION=132644 -fPIC -D_LARGEFILE64_SOURCE=1 ztest14416.c
+Checking for unistd.h... Yes.
+
+=== ztest14416.c ===
+#include <stdarg.h>
+int main() { return 0; }
+===
+arm-brcm-linux-uclibcgnueabi-gcc -c -Os -Wall -DLINUX26 -DCONFIG_BCMWL5 -DCONFIG_BCMWL6 -DCONFIG_BCMWL6A -DPART_JFFS2_GAP=0UL -pipe -fno-strict-aliasing -DBCMWPA2 -DBCMARM -marm -DTCONFIG_NVRAM_64K -DLINUX_KERNEL_VERSION=132644 -fPIC -D_LARGEFILE64_SOURCE=1 ztest14416.c
+Checking for stdarg.h... Yes.
+
+=== ztest14416.c ===
+#include <stdio.h>
+#include <stdarg.h>
+#include "zconf.h"
+int main()
+{
+#ifndef STDC
+  choke me
+#endif
+  return 0;
+}
+===
+arm-brcm-linux-uclibcgnueabi-gcc -c -Os -Wall -DLINUX26 -DCONFIG_BCMWL5 -DCONFIG_BCMWL6 -DCONFIG_BCMWL6A -DPART_JFFS2_GAP=0UL -pipe -fno-strict-aliasing -DBCMWPA2 -DBCMARM -marm -DTCONFIG_NVRAM_64K -DLINUX_KERNEL_VERSION=132644 -fPIC -D_LARGEFILE64_SOURCE=1 ztest14416.c
+Checking whether to use vs[n]printf() or s[n]printf()... using vs[n]printf().
+
+=== ztest14416.c ===
+#include <stdio.h>
+#include <stdarg.h>
+int mytest(const char *fmt, ...)
+{
+  char buf[20];
+  va_list ap;
+  va_start(ap, fmt);
+  vsnprintf(buf, sizeof(buf), fmt, ap);
+  va_end(ap);
+  return 0;
+}
+int main()
+{
+  return (mytest("Hello%d\n", 1));
+}
+===
+arm-brcm-linux-uclibcgnueabi-gcc -Os -Wall -DLINUX26 -DCONFIG_BCMWL5 -DCONFIG_BCMWL6 -DCONFIG_BCMWL6A -DPART_JFFS2_GAP=0UL -pipe -fno-strict-aliasing -DBCMWPA2 -DBCMARM -marm -DTCONFIG_NVRAM_64K -DLINUX_KERNEL_VERSION=132644 -fPIC -D_LARGEFILE64_SOURCE=1 -o ztest14416 ztest14416.c
+Checking for vsnprintf() in stdio.h... Yes.
+
+=== ztest14416.c ===
+#include <stdio.h>
+#include <stdarg.h>
+int mytest(const char *fmt, ...)
+{
+  int n;
+  char buf[20];
+  va_list ap;
+  va_start(ap, fmt);
+  n = vsnprintf(buf, sizeof(buf), fmt, ap);
+  va_end(ap);
+  return n;
+}
+int main()
+{
+  return (mytest("Hello%d\n", 1));
+}
+===
+arm-brcm-linux-uclibcgnueabi-gcc -c -Os -Wall -DLINUX26 -DCONFIG_BCMWL5 -DCONFIG_BCMWL6 -DCONFIG_BCMWL6A -DPART_JFFS2_GAP=0UL -pipe -fno-strict-aliasing -DBCMWPA2 -DBCMARM -marm -DTCONFIG_NVRAM_64K -DLINUX_KERNEL_VERSION=132644 -fPIC -D_LARGEFILE64_SOURCE=1 ztest14416.c
+Checking for return value of vsnprintf()... Yes.
+
+=== ztest14416.c ===
+#define ZLIB_INTERNAL __attribute__((visibility ("hidden")))
+int ZLIB_INTERNAL foo;
+int main()
+{
+  return 0;
+}
+===
+arm-brcm-linux-uclibcgnueabi-gcc -c -Os -Wall -DLINUX26 -DCONFIG_BCMWL5 -DCONFIG_BCMWL6 -DCONFIG_BCMWL6A -DPART_JFFS2_GAP=0UL -pipe -fno-strict-aliasing -DBCMWPA2 -DBCMARM -marm -DTCONFIG_NVRAM_64K -DLINUX_KERNEL_VERSION=132644 -fPIC -D_LARGEFILE64_SOURCE=1 ztest14416.c
+Checking for attribute(visibility) support... Yes.
+
+ALL = static shared all64
+AR = arm-brcm-linux-uclibcgnueabi-ar
+ARFLAGS = rc
+CC = arm-brcm-linux-uclibcgnueabi-gcc
+CFLAGS = -Os -Wall -DLINUX26 -DCONFIG_BCMWL5 -DCONFIG_BCMWL6 -DCONFIG_BCMWL6A -DPART_JFFS2_GAP=0UL -pipe -fno-strict-aliasing -DBCMWPA2 -DBCMARM -marm -DTCONFIG_NVRAM_64K -DLINUX_KERNEL_VERSION=132644 -fPIC -D_LARGEFILE64_SOURCE=1 -DHAVE_HIDDEN
+CPP = arm-brcm-linux-uclibcgnueabi-gcc -E
+EXE =
+LDCONFIG = ldconfig
+LDFLAGS =
+LDSHARED = arm-brcm-linux-uclibcgnueabi-gcc -shared -Wl,-soname,libz.so.1,--version-script,zlib.map
+LDSHAREDLIBC = -lgcc_s
+OBJC = $(OBJZ) $(OBJG)
+PIC_OBJC = $(PIC_OBJZ) $(PIC_OBJG)
+RANLIB = arm-brcm-linux-uclibcgnueabi-ranlib
+SFLAGS = -Os -Wall -DLINUX26 -DCONFIG_BCMWL5 -DCONFIG_BCMWL6 -DCONFIG_BCMWL6A -DPART_JFFS2_GAP=0UL -pipe -fno-strict-aliasing -DBCMWPA2 -DBCMARM -marm -DTCONFIG_NVRAM_64K -DLINUX_KERNEL_VERSION=132644 -fPIC -fPIC -D_LARGEFILE64_SOURCE=1 -DHAVE_HIDDEN
+SHAREDLIB = libz.so
+SHAREDLIBM = libz.so.1
+SHAREDLIBV = libz.so.1.2.11
+STATICLIB = libz.a
+TEST = all teststatic testshared test64
+VER = 1.2.11
+Z_U4 =
+SRCDIR =
+exec_prefix = ${prefix}
+includedir = ${prefix}/include
+libdir = /usr/lib
+mandir = ${prefix}/share/man
+prefix = /usr
+sharedlibdir = ${libdir}
+uname = Linux
+--------------------
+
+
+--------------------
+./configure --shared --prefix=/usr --libdir=/usr/lib
+Sun Nov 12 17:29:19 CST 2017
+=== ztest31403.c ===
+extern int getchar();
+int hello() {return getchar();}
+===
+arm-brcm-linux-uclibcgnueabi-gcc -c ztest31403.c
+... using gcc
+
+Checking for obsessive-compulsive compiler options...
+=== ztest31403.c ===
+int foo() { return 0; }
+===
+arm-brcm-linux-uclibcgnueabi-gcc -c -Os -Wall -DLINUX26 -DCONFIG_BCMWL5 -DCONFIG_BCMWL6 -DCONFIG_BCMWL6A -DPART_JFFS2_GAP=0UL -pipe -fno-strict-aliasing -DBCMWPA2 -DBCMARM -marm -DTCONFIG_NVRAM_64K -DLINUX_KERNEL_VERSION=132644 -fPIC ztest31403.c
+
+Checking for shared library support...
+=== ztest31403.c ===
+extern int getchar();
+int hello() {return getchar();}
+===
+arm-brcm-linux-uclibcgnueabi-gcc -w -c -Os -Wall -DLINUX26 -DCONFIG_BCMWL5 -DCONFIG_BCMWL6 -DCONFIG_BCMWL6A -DPART_JFFS2_GAP=0UL -pipe -fno-strict-aliasing -DBCMWPA2 -DBCMARM -marm -DTCONFIG_NVRAM_64K -DLINUX_KERNEL_VERSION=132644 -fPIC -fPIC ztest31403.c
+arm-brcm-linux-uclibcgnueabi-gcc -shared -Wl,-soname,libz.so.1,--version-script,zlib.map -Os -Wall -DLINUX26 -DCONFIG_BCMWL5 -DCONFIG_BCMWL6 -DCONFIG_BCMWL6A -DPART_JFFS2_GAP=0UL -pipe -fno-strict-aliasing -DBCMWPA2 -DBCMARM -marm -DTCONFIG_NVRAM_64K -DLINUX_KERNEL_VERSION=132644 -fPIC -fPIC -o ztest31403.so ztest31403.o
+Building shared library libz.so.1.2.11 with arm-brcm-linux-uclibcgnueabi-gcc.
+
+=== ztest31403.c ===
+#include <stdio.h>
+#include <stdlib.h>
+size_t dummy = 0;
+===
+arm-brcm-linux-uclibcgnueabi-gcc -c -Os -Wall -DLINUX26 -DCONFIG_BCMWL5 -DCONFIG_BCMWL6 -DCONFIG_BCMWL6A -DPART_JFFS2_GAP=0UL -pipe -fno-strict-aliasing -DBCMWPA2 -DBCMARM -marm -DTCONFIG_NVRAM_64K -DLINUX_KERNEL_VERSION=132644 -fPIC ztest31403.c
+Checking for size_t... Yes.
+
+
+=== ztest31403.c ===
+#include <sys/types.h>
+off64_t dummy = 0;
+===
+arm-brcm-linux-uclibcgnueabi-gcc -c -Os -Wall -DLINUX26 -DCONFIG_BCMWL5 -DCONFIG_BCMWL6 -DCONFIG_BCMWL6A -DPART_JFFS2_GAP=0UL -pipe -fno-strict-aliasing -DBCMWPA2 -DBCMARM -marm -DTCONFIG_NVRAM_64K -DLINUX_KERNEL_VERSION=132644 -fPIC -D_LARGEFILE64_SOURCE=1 ztest31403.c
+Checking for off64_t... Yes.
+Checking for fseeko... Yes.
+
+=== ztest31403.c ===
+#include <string.h>
+#include <errno.h>
+int main() { return strlen(strerror(errno)); }
+===
+arm-brcm-linux-uclibcgnueabi-gcc -Os -Wall -DLINUX26 -DCONFIG_BCMWL5 -DCONFIG_BCMWL6 -DCONFIG_BCMWL6A -DPART_JFFS2_GAP=0UL -pipe -fno-strict-aliasing -DBCMWPA2 -DBCMARM -marm -DTCONFIG_NVRAM_64K -DLINUX_KERNEL_VERSION=132644 -fPIC -D_LARGEFILE64_SOURCE=1 -o ztest31403 ztest31403.c
+Checking for strerror... Yes.
+
+=== ztest31403.c ===
+#include <unistd.h>
+int main() { return 0; }
+===
+arm-brcm-linux-uclibcgnueabi-gcc -c -Os -Wall -DLINUX26 -DCONFIG_BCMWL5 -DCONFIG_BCMWL6 -DCONFIG_BCMWL6A -DPART_JFFS2_GAP=0UL -pipe -fno-strict-aliasing -DBCMWPA2 -DBCMARM -marm -DTCONFIG_NVRAM_64K -DLINUX_KERNEL_VERSION=132644 -fPIC -D_LARGEFILE64_SOURCE=1 ztest31403.c
+Checking for unistd.h... Yes.
+
+=== ztest31403.c ===
+#include <stdarg.h>
+int main() { return 0; }
+===
+arm-brcm-linux-uclibcgnueabi-gcc -c -Os -Wall -DLINUX26 -DCONFIG_BCMWL5 -DCONFIG_BCMWL6 -DCONFIG_BCMWL6A -DPART_JFFS2_GAP=0UL -pipe -fno-strict-aliasing -DBCMWPA2 -DBCMARM -marm -DTCONFIG_NVRAM_64K -DLINUX_KERNEL_VERSION=132644 -fPIC -D_LARGEFILE64_SOURCE=1 ztest31403.c
+Checking for stdarg.h... Yes.
+
+=== ztest31403.c ===
+#include <stdio.h>
+#include <stdarg.h>
+#include "zconf.h"
+int main()
+{
+#ifndef STDC
+  choke me
+#endif
+  return 0;
+}
+===
+arm-brcm-linux-uclibcgnueabi-gcc -c -Os -Wall -DLINUX26 -DCONFIG_BCMWL5 -DCONFIG_BCMWL6 -DCONFIG_BCMWL6A -DPART_JFFS2_GAP=0UL -pipe -fno-strict-aliasing -DBCMWPA2 -DBCMARM -marm -DTCONFIG_NVRAM_64K -DLINUX_KERNEL_VERSION=132644 -fPIC -D_LARGEFILE64_SOURCE=1 ztest31403.c
+Checking whether to use vs[n]printf() or s[n]printf()... using vs[n]printf().
+
+=== ztest31403.c ===
+#include <stdio.h>
+#include <stdarg.h>
+int mytest(const char *fmt, ...)
+{
+  char buf[20];
+  va_list ap;
+  va_start(ap, fmt);
+  vsnprintf(buf, sizeof(buf), fmt, ap);
+  va_end(ap);
+  return 0;
+}
+int main()
+{
+  return (mytest("Hello%d\n", 1));
+}
+===
+arm-brcm-linux-uclibcgnueabi-gcc -Os -Wall -DLINUX26 -DCONFIG_BCMWL5 -DCONFIG_BCMWL6 -DCONFIG_BCMWL6A -DPART_JFFS2_GAP=0UL -pipe -fno-strict-aliasing -DBCMWPA2 -DBCMARM -marm -DTCONFIG_NVRAM_64K -DLINUX_KERNEL_VERSION=132644 -fPIC -D_LARGEFILE64_SOURCE=1 -o ztest31403 ztest31403.c
+Checking for vsnprintf() in stdio.h... Yes.
+
+=== ztest31403.c ===
+#include <stdio.h>
+#include <stdarg.h>
+int mytest(const char *fmt, ...)
+{
+  int n;
+  char buf[20];
+  va_list ap;
+  va_start(ap, fmt);
+  n = vsnprintf(buf, sizeof(buf), fmt, ap);
+  va_end(ap);
+  return n;
+}
+int main()
+{
+  return (mytest("Hello%d\n", 1));
+}
+===
+arm-brcm-linux-uclibcgnueabi-gcc -c -Os -Wall -DLINUX26 -DCONFIG_BCMWL5 -DCONFIG_BCMWL6 -DCONFIG_BCMWL6A -DPART_JFFS2_GAP=0UL -pipe -fno-strict-aliasing -DBCMWPA2 -DBCMARM -marm -DTCONFIG_NVRAM_64K -DLINUX_KERNEL_VERSION=132644 -fPIC -D_LARGEFILE64_SOURCE=1 ztest31403.c
+Checking for return value of vsnprintf()... Yes.
+
+=== ztest31403.c ===
+#define ZLIB_INTERNAL __attribute__((visibility ("hidden")))
+int ZLIB_INTERNAL foo;
+int main()
+{
+  return 0;
+}
+===
+arm-brcm-linux-uclibcgnueabi-gcc -c -Os -Wall -DLINUX26 -DCONFIG_BCMWL5 -DCONFIG_BCMWL6 -DCONFIG_BCMWL6A -DPART_JFFS2_GAP=0UL -pipe -fno-strict-aliasing -DBCMWPA2 -DBCMARM -marm -DTCONFIG_NVRAM_64K -DLINUX_KERNEL_VERSION=132644 -fPIC -D_LARGEFILE64_SOURCE=1 ztest31403.c
+Checking for attribute(visibility) support... Yes.
+
+ALL = static shared all64
+AR = arm-brcm-linux-uclibcgnueabi-ar
+ARFLAGS = rc
+CC = arm-brcm-linux-uclibcgnueabi-gcc
+CFLAGS = -Os -Wall -DLINUX26 -DCONFIG_BCMWL5 -DCONFIG_BCMWL6 -DCONFIG_BCMWL6A -DPART_JFFS2_GAP=0UL -pipe -fno-strict-aliasing -DBCMWPA2 -DBCMARM -marm -DTCONFIG_NVRAM_64K -DLINUX_KERNEL_VERSION=132644 -fPIC -D_LARGEFILE64_SOURCE=1 -DHAVE_HIDDEN
+CPP = arm-brcm-linux-uclibcgnueabi-gcc -E
+EXE =
+LDCONFIG = ldconfig
+LDFLAGS =
+LDSHARED = arm-brcm-linux-uclibcgnueabi-gcc -shared -Wl,-soname,libz.so.1,--version-script,zlib.map
+LDSHAREDLIBC = -lgcc_s
+OBJC = $(OBJZ) $(OBJG)
+PIC_OBJC = $(PIC_OBJZ) $(PIC_OBJG)
+RANLIB = arm-brcm-linux-uclibcgnueabi-ranlib
+SFLAGS = -Os -Wall -DLINUX26 -DCONFIG_BCMWL5 -DCONFIG_BCMWL6 -DCONFIG_BCMWL6A -DPART_JFFS2_GAP=0UL -pipe -fno-strict-aliasing -DBCMWPA2 -DBCMARM -marm -DTCONFIG_NVRAM_64K -DLINUX_KERNEL_VERSION=132644 -fPIC -fPIC -D_LARGEFILE64_SOURCE=1 -DHAVE_HIDDEN
+SHAREDLIB = libz.so
+SHAREDLIBM = libz.so.1
+SHAREDLIBV = libz.so.1.2.11
+STATICLIB = libz.a
+TEST = all teststatic testshared test64
+VER = 1.2.11
+Z_U4 =
+SRCDIR =
+exec_prefix = ${prefix}
+includedir = ${prefix}/include
+libdir = /usr/lib
+mandir = ${prefix}/share/man
+prefix = /usr
+sharedlibdir = ${libdir}
+uname = Linux
+--------------------
+
+
+--------------------
+./configure --shared --prefix=/usr --libdir=/usr/lib
+Sun Nov 12 18:59:45 CST 2017
+=== ztest17169.c ===
+extern int getchar();
+int hello() {return getchar();}
+===
+arm-brcm-linux-uclibcgnueabi-gcc -c ztest17169.c
+... using gcc
+
+Checking for obsessive-compulsive compiler options...
+=== ztest17169.c ===
+int foo() { return 0; }
+===
+arm-brcm-linux-uclibcgnueabi-gcc -c -Os -Wall -DLINUX26 -DCONFIG_BCMWL5 -DCONFIG_BCMWL6 -DCONFIG_BCMWL6A -DPART_JFFS2_GAP=0UL -pipe -fno-strict-aliasing -DBCMWPA2 -DBCMARM -marm -DTCONFIG_NVRAM_64K -DLINUX_KERNEL_VERSION=132644 -fPIC ztest17169.c
+
+Checking for shared library support...
+=== ztest17169.c ===
+extern int getchar();
+int hello() {return getchar();}
+===
+arm-brcm-linux-uclibcgnueabi-gcc -w -c -Os -Wall -DLINUX26 -DCONFIG_BCMWL5 -DCONFIG_BCMWL6 -DCONFIG_BCMWL6A -DPART_JFFS2_GAP=0UL -pipe -fno-strict-aliasing -DBCMWPA2 -DBCMARM -marm -DTCONFIG_NVRAM_64K -DLINUX_KERNEL_VERSION=132644 -fPIC -fPIC ztest17169.c
+arm-brcm-linux-uclibcgnueabi-gcc -shared -Wl,-soname,libz.so.1,--version-script,zlib.map -Os -Wall -DLINUX26 -DCONFIG_BCMWL5 -DCONFIG_BCMWL6 -DCONFIG_BCMWL6A -DPART_JFFS2_GAP=0UL -pipe -fno-strict-aliasing -DBCMWPA2 -DBCMARM -marm -DTCONFIG_NVRAM_64K -DLINUX_KERNEL_VERSION=132644 -fPIC -fPIC -o ztest17169.so ztest17169.o
+Building shared library libz.so.1.2.11 with arm-brcm-linux-uclibcgnueabi-gcc.
+
+=== ztest17169.c ===
+#include <stdio.h>
+#include <stdlib.h>
+size_t dummy = 0;
+===
+arm-brcm-linux-uclibcgnueabi-gcc -c -Os -Wall -DLINUX26 -DCONFIG_BCMWL5 -DCONFIG_BCMWL6 -DCONFIG_BCMWL6A -DPART_JFFS2_GAP=0UL -pipe -fno-strict-aliasing -DBCMWPA2 -DBCMARM -marm -DTCONFIG_NVRAM_64K -DLINUX_KERNEL_VERSION=132644 -fPIC ztest17169.c
+Checking for size_t... Yes.
+
+
+=== ztest17169.c ===
+#include <sys/types.h>
+off64_t dummy = 0;
+===
+arm-brcm-linux-uclibcgnueabi-gcc -c -Os -Wall -DLINUX26 -DCONFIG_BCMWL5 -DCONFIG_BCMWL6 -DCONFIG_BCMWL6A -DPART_JFFS2_GAP=0UL -pipe -fno-strict-aliasing -DBCMWPA2 -DBCMARM -marm -DTCONFIG_NVRAM_64K -DLINUX_KERNEL_VERSION=132644 -fPIC -D_LARGEFILE64_SOURCE=1 ztest17169.c
+Checking for off64_t... Yes.
+Checking for fseeko... Yes.
+
+=== ztest17169.c ===
+#include <string.h>
+#include <errno.h>
+int main() { return strlen(strerror(errno)); }
+===
+arm-brcm-linux-uclibcgnueabi-gcc -Os -Wall -DLINUX26 -DCONFIG_BCMWL5 -DCONFIG_BCMWL6 -DCONFIG_BCMWL6A -DPART_JFFS2_GAP=0UL -pipe -fno-strict-aliasing -DBCMWPA2 -DBCMARM -marm -DTCONFIG_NVRAM_64K -DLINUX_KERNEL_VERSION=132644 -fPIC -D_LARGEFILE64_SOURCE=1 -o ztest17169 ztest17169.c
+Checking for strerror... Yes.
+
+=== ztest17169.c ===
+#include <unistd.h>
+int main() { return 0; }
+===
+arm-brcm-linux-uclibcgnueabi-gcc -c -Os -Wall -DLINUX26 -DCONFIG_BCMWL5 -DCONFIG_BCMWL6 -DCONFIG_BCMWL6A -DPART_JFFS2_GAP=0UL -pipe -fno-strict-aliasing -DBCMWPA2 -DBCMARM -marm -DTCONFIG_NVRAM_64K -DLINUX_KERNEL_VERSION=132644 -fPIC -D_LARGEFILE64_SOURCE=1 ztest17169.c
+Checking for unistd.h... Yes.
+
+=== ztest17169.c ===
+#include <stdarg.h>
+int main() { return 0; }
+===
+arm-brcm-linux-uclibcgnueabi-gcc -c -Os -Wall -DLINUX26 -DCONFIG_BCMWL5 -DCONFIG_BCMWL6 -DCONFIG_BCMWL6A -DPART_JFFS2_GAP=0UL -pipe -fno-strict-aliasing -DBCMWPA2 -DBCMARM -marm -DTCONFIG_NVRAM_64K -DLINUX_KERNEL_VERSION=132644 -fPIC -D_LARGEFILE64_SOURCE=1 ztest17169.c
+Checking for stdarg.h... Yes.
+
+=== ztest17169.c ===
+#include <stdio.h>
+#include <stdarg.h>
+#include "zconf.h"
+int main()
+{
+#ifndef STDC
+  choke me
+#endif
+  return 0;
+}
+===
+arm-brcm-linux-uclibcgnueabi-gcc -c -Os -Wall -DLINUX26 -DCONFIG_BCMWL5 -DCONFIG_BCMWL6 -DCONFIG_BCMWL6A -DPART_JFFS2_GAP=0UL -pipe -fno-strict-aliasing -DBCMWPA2 -DBCMARM -marm -DTCONFIG_NVRAM_64K -DLINUX_KERNEL_VERSION=132644 -fPIC -D_LARGEFILE64_SOURCE=1 ztest17169.c
+Checking whether to use vs[n]printf() or s[n]printf()... using vs[n]printf().
+
+=== ztest17169.c ===
+#include <stdio.h>
+#include <stdarg.h>
+int mytest(const char *fmt, ...)
+{
+  char buf[20];
+  va_list ap;
+  va_start(ap, fmt);
+  vsnprintf(buf, sizeof(buf), fmt, ap);
+  va_end(ap);
+  return 0;
+}
+int main()
+{
+  return (mytest("Hello%d\n", 1));
+}
+===
+arm-brcm-linux-uclibcgnueabi-gcc -Os -Wall -DLINUX26 -DCONFIG_BCMWL5 -DCONFIG_BCMWL6 -DCONFIG_BCMWL6A -DPART_JFFS2_GAP=0UL -pipe -fno-strict-aliasing -DBCMWPA2 -DBCMARM -marm -DTCONFIG_NVRAM_64K -DLINUX_KERNEL_VERSION=132644 -fPIC -D_LARGEFILE64_SOURCE=1 -o ztest17169 ztest17169.c
+Checking for vsnprintf() in stdio.h... Yes.
+
+=== ztest17169.c ===
+#include <stdio.h>
+#include <stdarg.h>
+int mytest(const char *fmt, ...)
+{
+  int n;
+  char buf[20];
+  va_list ap;
+  va_start(ap, fmt);
+  n = vsnprintf(buf, sizeof(buf), fmt, ap);
+  va_end(ap);
+  return n;
+}
+int main()
+{
+  return (mytest("Hello%d\n", 1));
+}
+===
+arm-brcm-linux-uclibcgnueabi-gcc -c -Os -Wall -DLINUX26 -DCONFIG_BCMWL5 -DCONFIG_BCMWL6 -DCONFIG_BCMWL6A -DPART_JFFS2_GAP=0UL -pipe -fno-strict-aliasing -DBCMWPA2 -DBCMARM -marm -DTCONFIG_NVRAM_64K -DLINUX_KERNEL_VERSION=132644 -fPIC -D_LARGEFILE64_SOURCE=1 ztest17169.c
+Checking for return value of vsnprintf()... Yes.
+
+=== ztest17169.c ===
+#define ZLIB_INTERNAL __attribute__((visibility ("hidden")))
+int ZLIB_INTERNAL foo;
+int main()
+{
+  return 0;
+}
+===
+arm-brcm-linux-uclibcgnueabi-gcc -c -Os -Wall -DLINUX26 -DCONFIG_BCMWL5 -DCONFIG_BCMWL6 -DCONFIG_BCMWL6A -DPART_JFFS2_GAP=0UL -pipe -fno-strict-aliasing -DBCMWPA2 -DBCMARM -marm -DTCONFIG_NVRAM_64K -DLINUX_KERNEL_VERSION=132644 -fPIC -D_LARGEFILE64_SOURCE=1 ztest17169.c
+Checking for attribute(visibility) support... Yes.
+
+ALL = static shared all64
+AR = arm-brcm-linux-uclibcgnueabi-ar
+ARFLAGS = rc
+CC = arm-brcm-linux-uclibcgnueabi-gcc
+CFLAGS = -Os -Wall -DLINUX26 -DCONFIG_BCMWL5 -DCONFIG_BCMWL6 -DCONFIG_BCMWL6A -DPART_JFFS2_GAP=0UL -pipe -fno-strict-aliasing -DBCMWPA2 -DBCMARM -marm -DTCONFIG_NVRAM_64K -DLINUX_KERNEL_VERSION=132644 -fPIC -D_LARGEFILE64_SOURCE=1 -DHAVE_HIDDEN
+CPP = arm-brcm-linux-uclibcgnueabi-gcc -E
+EXE =
+LDCONFIG = ldconfig
+LDFLAGS =
+LDSHARED = arm-brcm-linux-uclibcgnueabi-gcc -shared -Wl,-soname,libz.so.1,--version-script,zlib.map
+LDSHAREDLIBC = -lgcc_s
+OBJC = $(OBJZ) $(OBJG)
+PIC_OBJC = $(PIC_OBJZ) $(PIC_OBJG)
+RANLIB = arm-brcm-linux-uclibcgnueabi-ranlib
+SFLAGS = -Os -Wall -DLINUX26 -DCONFIG_BCMWL5 -DCONFIG_BCMWL6 -DCONFIG_BCMWL6A -DPART_JFFS2_GAP=0UL -pipe -fno-strict-aliasing -DBCMWPA2 -DBCMARM -marm -DTCONFIG_NVRAM_64K -DLINUX_KERNEL_VERSION=132644 -fPIC -fPIC -D_LARGEFILE64_SOURCE=1 -DHAVE_HIDDEN
+SHAREDLIB = libz.so
+SHAREDLIBM = libz.so.1
+SHAREDLIBV = libz.so.1.2.11
+STATICLIB = libz.a
+TEST = all teststatic testshared test64
+VER = 1.2.11
+Z_U4 =
+SRCDIR =
+exec_prefix = ${prefix}
+includedir = ${prefix}/include
+libdir = /usr/lib
+mandir = ${prefix}/share/man
+prefix = /usr
+sharedlibdir = ${libdir}
+uname = Linux
+--------------------
+
+

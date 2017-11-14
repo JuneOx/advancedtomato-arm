@@ -1708,9 +1708,9 @@ static int init_nvram(void)
 			nvram_set("2:ccode", "SG");
 			nvram_set("2:regrev", "0");
 
-			wl_defaults();
-			bsd_defaults();
-			set_bcm4360ac_vars();
+			//wl_defaults();
+			//bsd_defaults();
+			//set_bcm4360ac_vars();
 		}
 		break;
 	case MODEL_R8000:
@@ -1782,9 +1782,9 @@ static int init_nvram(void)
 			nvram_set("devpath1", "pcie/2/3");
 			nvram_set("devpath2", "pcie/2/4");
 
-			wl_defaults();
-			bsd_defaults();
-			set_r8000_vars();
+			//wl_defaults();
+			//bsd_defaults();
+			//set_r8000_vars();
 
 		}
 		break;
